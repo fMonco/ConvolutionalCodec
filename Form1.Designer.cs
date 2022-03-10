@@ -38,7 +38,6 @@
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.decode = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SuspendLayout();
             // 
             // encode
@@ -53,19 +52,21 @@
             // 
             // listBox1
             // 
+            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 15;
             this.listBox1.Location = new System.Drawing.Point(212, 42);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(52, 64);
+            this.listBox1.Size = new System.Drawing.Size(52, 60);
             this.listBox1.TabIndex = 2;
             // 
             // textBox2
             // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox2.Location = new System.Drawing.Point(212, 13);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(133, 20);
+            this.textBox2.Size = new System.Drawing.Size(133, 13);
             this.textBox2.TabIndex = 1;
             this.textBox2.Text = "Enter number of adders";
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
@@ -73,9 +74,10 @@
             // 
             // textBox3
             // 
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Location = new System.Drawing.Point(270, 54);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(75, 23);
+            this.textBox3.Size = new System.Drawing.Size(75, 16);
             this.textBox3.TabIndex = 3;
             this.textBox3.Text = "Connected Registers";
             this.textBox3.Click += new System.EventHandler(this.textBox3_Click);
@@ -83,6 +85,7 @@
             // 
             // connect_Regs
             // 
+            this.connect_Regs.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.connect_Regs.Location = new System.Drawing.Point(270, 83);
             this.connect_Regs.Name = "connect_Regs";
             this.connect_Regs.Size = new System.Drawing.Size(75, 23);
@@ -93,6 +96,7 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Location = new System.Drawing.Point(12, 12);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(194, 96);
@@ -102,30 +106,33 @@
             // 
             // richTextBox2
             // 
+            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox2.Location = new System.Drawing.Point(351, 39);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
             this.richTextBox2.Size = new System.Drawing.Size(194, 67);
-            this.richTextBox2.TabIndex = 12;
+            this.richTextBox2.TabIndex = 6;
             this.richTextBox2.Text = "Encoded Message";
             this.richTextBox2.Enter += new System.EventHandler(this.richTextBox2_Enter);
             // 
             // richTextBox3
             // 
+            this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox3.Location = new System.Drawing.Point(12, 128);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.Size = new System.Drawing.Size(194, 96);
-            this.richTextBox3.TabIndex = 6;
+            this.richTextBox3.TabIndex = 7;
             this.richTextBox3.Text = "Enter text to decode";
             this.richTextBox3.Enter += new System.EventHandler(this.richTextBox3_Enter);
             // 
             // richTextBox4
             // 
+            this.richTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox4.Location = new System.Drawing.Point(351, 128);
             this.richTextBox4.Name = "richTextBox4";
             this.richTextBox4.ReadOnly = true;
             this.richTextBox4.Size = new System.Drawing.Size(194, 96);
-            this.richTextBox4.TabIndex = 14;
+            this.richTextBox4.TabIndex = 9;
             this.richTextBox4.Text = "Decoded message";
             this.richTextBox4.Enter += new System.EventHandler(this.richTextBox4_Enter);
             // 
@@ -134,21 +141,10 @@
             this.decode.Location = new System.Drawing.Point(241, 164);
             this.decode.Name = "decode";
             this.decode.Size = new System.Drawing.Size(75, 23);
-            this.decode.TabIndex = 7;
+            this.decode.TabIndex = 8;
             this.decode.Text = "Decode";
             this.decode.UseVisualStyleBackColor = true;
             this.decode.Click += new System.EventHandler(this.decode_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox1.Location = new System.Drawing.Point(-10, -11);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(572, 133);
-            this.groupBox1.TabIndex = 16;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // Form1
             // 
@@ -165,7 +161,6 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.encode);
-            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -187,6 +182,5 @@
         private RichTextBox richTextBox3;
         private RichTextBox richTextBox4;
         private Button decode;
-        private GroupBox groupBox1;
     }
 }
