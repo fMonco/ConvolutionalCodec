@@ -67,7 +67,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(133, 20);
             this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "Enter number of summators";
+            this.textBox2.Text = "Enter number of adders";
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
