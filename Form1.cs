@@ -10,7 +10,12 @@ namespace ConvolutionalCoder
 
         private void connect_Regs_Click(object sender, EventArgs e)
         {
-
+            int[] adders = new int[listBox1.Items.Count];
+            for (int i = 0; i < listBox1.Items.Count; i++)
+            {
+                adders[i] = Convert.ToInt32(listBox1.Items[i].ToString());
+            }
+            richTextBox1.Text = string.Join(string.Empty, adders);
         }
 
         private void encode_Click(object sender, EventArgs e)
@@ -37,8 +42,6 @@ namespace ConvolutionalCoder
             }
             else
             {
-
-
                 listBox1.Items.Clear();
                 try
                 {
