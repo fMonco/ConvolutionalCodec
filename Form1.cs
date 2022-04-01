@@ -1,3 +1,5 @@
+using System;
+using System.Text;
 namespace ConvolutionalCoder
 {
     public partial class Form1 : Form
@@ -7,19 +9,59 @@ namespace ConvolutionalCoder
             InitializeComponent();
         }
 
+            public static byte[] ConvertToByteArray(string str, Encoding encoding)
+            {
+                return encoding.GetBytes(str);
+            }
 
+            public static String ToBinary(Byte[] data)
+            {
+                return string.Join("", data.Select(byt => Convert.ToString(byt, 2).PadLeft(8, '0')));
+            }
+
+           
+
+        string[] adders;
+        int i = 0;
         private void connect_Regs_Click(object sender, EventArgs e)
         {
-            int[] adders = new int[listBox1.Items.Count];
-            for (int i = 0; i < listBox1.Items.Count; i++)
+            
+            //string[] adders = new string[];
+
+            int size = int.Parse(textBox2.Text);
+
+            if (int.Parse(label1.Text) == size)
             {
-                adders[i] = Convert.ToInt32(listBox1.Items[i].ToString());
+                connect_Regs.Enabled = false;
+                textBox3.Enabled = false;
             }
-            richTextBox1.Text = string.Join(string.Empty, adders);
+            if (adders == null || adders.Length != size)
+            {
+                adders = new string[size];
+                i = 0;
+
+            }
+            if (i < adders.Length)
+            {
+                adders[i] = textBox3.Text;
+                i++;
+                label1.Text = i.ToString();
+            }
+
+            else
+            {
+                connect_Regs.Enabled = false;
+                textBox3.Enabled = false;
+            }
+
+            richTextBox1.Lines = adders;
         }
 
         private void encode_Click(object sender, EventArgs e)
         {
+            var binaryString = ToBinary(ConvertToByteArray(richTextBox1.Text, Encoding.ASCII));
+            richTextBox2.Text = binaryString;
+            
 
         }
 
@@ -30,7 +72,7 @@ namespace ConvolutionalCoder
 
 
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        public void textBox2_TextChanged(object sender, EventArgs e)
         {
 
             if (System.Text.RegularExpressions.Regex.IsMatch(textBox2.Text, "[^0-9]"))
@@ -42,19 +84,12 @@ namespace ConvolutionalCoder
             }
             else
             {
-                listBox1.Items.Clear();
-                try
-                {
-                    for (int i = 1; i <= Convert.ToInt16(textBox2.Text); i++)
-                    {
+                //label1.Text = "0";
+                connect_Regs.Enabled = true;
+                textBox3.Enabled = true;
 
-                        listBox1.Items.Add(i);
-                    }
-                }
-                catch
-                {
-                }
             }
+
         }
 
         private void textBox2_Click(object sender, EventArgs e)
@@ -93,6 +128,7 @@ namespace ConvolutionalCoder
         {
             this.richTextBox4.SelectAll();
         }
+
 
     }
 }

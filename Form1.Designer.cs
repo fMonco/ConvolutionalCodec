@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.encode = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.connect_Regs = new System.Windows.Forms.Button();
@@ -38,6 +37,7 @@
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.decode = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // encode
@@ -49,16 +49,6 @@
             this.encode.Text = "Encode";
             this.encode.UseVisualStyleBackColor = true;
             this.encode.Click += new System.EventHandler(this.encode_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(212, 42);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(52, 60);
-            this.listBox1.TabIndex = 2;
             // 
             // textBox2
             // 
@@ -75,7 +65,7 @@
             // textBox3
             // 
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(270, 54);
+            this.textBox3.Location = new System.Drawing.Point(273, 55);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(75, 16);
             this.textBox3.TabIndex = 3;
@@ -86,7 +76,7 @@
             // connect_Regs
             // 
             this.connect_Regs.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.connect_Regs.Location = new System.Drawing.Point(270, 83);
+            this.connect_Regs.Location = new System.Drawing.Point(241, 83);
             this.connect_Regs.Name = "connect_Regs";
             this.connect_Regs.Size = new System.Drawing.Size(75, 23);
             this.connect_Regs.TabIndex = 4;
@@ -146,11 +136,21 @@
             this.decode.UseVisualStyleBackColor = true;
             this.decode.Click += new System.EventHandler(this.decode_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(212, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(13, 15);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(554, 230);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.decode);
             this.Controls.Add(this.richTextBox4);
             this.Controls.Add(this.richTextBox3);
@@ -159,7 +159,6 @@
             this.Controls.Add(this.connect_Regs);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.encode);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
@@ -173,7 +172,6 @@
 
         #endregion
         private Button encode;
-        private ListBox listBox1;
         private TextBox textBox2;
         private TextBox textBox3;
         private Button connect_Regs;
@@ -182,5 +180,6 @@
         private RichTextBox richTextBox3;
         private RichTextBox richTextBox4;
         private Button decode;
+        private Label label1;
     }
 }
