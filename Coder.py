@@ -3,8 +3,16 @@ import re
 def find_sum(str1):
     return sum(map(int, re.findall('\d', str1)))
 
-text = "1101"
-array = ["012", "02"]
+
+array = []
+n = int(input("Enter number of adders: "))
+for i in range(0, n):
+    ele = input()
+    array.append(ele)
+print(array)
+
+text = input("Enter text: ")
+
 rez = ""
 value =""
 string0 = "0" * len(text)
