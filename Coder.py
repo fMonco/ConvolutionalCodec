@@ -19,6 +19,7 @@ string0 = "0" * len(text)
 for i in range (len(text)):
     string0 = text[0:1:1] + string0[:-1:]
     text = text[1:]
+    #saadsa
     print("\n")
     print("Исходная строка " + string0)
     print("\n")

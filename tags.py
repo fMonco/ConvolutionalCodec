@@ -1,7 +1,6 @@
 from tkinter import *
 import re
 
-
 def find_sum(str1):
     return sum(map(int, re.findall('\d', str1)))
 
@@ -20,16 +19,16 @@ class MyWindow:
         self.btn1 = Button(win, text='Encode')
         self.btn2=Button(win, text='Decode')
         self.lbl1.place(x=10, y=10)
-        self.t1.place(x=100, y=10)
+        self.t1.place(x=100, y=10, width=155)
         self.lbl2.place(x=10, y=60)
-        self.t2.place(x=100, y=60)
+        self.t2.place(x=100, y=60, width=155)
         self.b1=Button(win, text='Encode', command=self.encode)
         self.b2=Button(win, text='Decode')
         self.b2.bind('<Button-1>', self.decode)
-        self.b1.place(x=60, y=110)
-        self.b2.place(x=130, y=110)
+        self.b1.place(x=65, y=110)
+        self.b2.place(x=165, y=110)
         self.lbl3.place(x=10, y=160)
-        self.t3.place(x=100, y=160, width=125, height=70)
+        self.t3.place(x=100, y=160, width=155, height=70)
 
     def encode(self):
         self.t3.delete(1.0, END)
@@ -68,8 +67,8 @@ class MyWindow:
         self.t3.delete(1.0, END)
         text = self.t1.get()
         self.t3.insert(END, text)
- 
-def decode(self, data: list[int]) -> (bytes, int):
+        
+    def decoder(self, data: list[int]) -> (bytes, int):
         """
         decode data bytes
         :param data: coded data to be decoded, list of ints representing each received bit.
@@ -92,8 +91,7 @@ def decode(self, data: list[int]) -> (bytes, int):
                     next_state = self.next_states[last_state][possible_input]
                     possible_output = self.out_bits[last_state][possible_input]
                     branch_metric = sum(tuple(possible_output[i]^codeword[i] for i in range(len(codeword))))
-                    possible_transitions.append([next_state, branch_metric + path.path_metric(), branch_metric, path,
-                                                 possible_input])
+                    possible_transitions.append([next_state, branch_metric + path.path_metric(), branch_metric, path, possible_input])
 
             # select survivors by inspecting paths entering a state
             new_paths = []
@@ -127,5 +125,5 @@ def decode(self, data: list[int]) -> (bytes, int):
 window=Tk()
 mywin=MyWindow(window)
 window.title('ConvolutionalCoder')
-window.geometry("250x250")
+window.geometry("275x250")
 window.mainloop()
